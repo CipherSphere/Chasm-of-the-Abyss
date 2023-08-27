@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://xt33h5k03i3m"]
+
+[ext_resource type="Script" path="res://scripts/player_movement.gd" id="1_ncf80"]
+[ext_resource type="Texture2D" uid="uid://b48cbt30nma8g" path="res://assets/HeroKnight_BlockNoEffect.png" id="1_w4pdg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cepeq"]
+atlas = ExtResource("1_w4pdg")
+region = Rect2(100, 0, 100, 55)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mku4t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cepeq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7qofp"]
+size = Vector2(64, 107)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4xvyp"]
+size = Vector2(91, 128)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_ncf80")
+
+[node name="SpriteAnim" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_mku4t")
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+position = Vector2(-8, 20.5)
+shape = SubResource("RectangleShape2D_7qofp")
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="HitBoxShape" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(-5.5, 19)
+shape = SubResource("RectangleShape2D_4xvyp")
+
+[node name="StatComponent" type="Node2D" parent="."]
+
+[node name="WeaponMount" type="Node2D" parent="."]
+position = Vector2(-10, 17)
+rotation = 0.094847

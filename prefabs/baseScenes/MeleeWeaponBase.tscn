@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://ihetcn00o6ru"]
+
+[ext_resource type="Script" path="res://scripts/MeleeWeaponBase.gd" id="1_2il3h"]
+
+[node name="MeleeWeaponBase" type="Node2D"]
+script = ExtResource("1_2il3h")
+
+[node name="Spriteanim" type="AnimatedSprite2D" parent="."]
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="HitboxShape" type="CollisionPolygon2D" parent="Hitbox"]
+
+[node name="DamageTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="timeout" from="DamageTimer" to="." method="_on_damage_timer_timeout"]

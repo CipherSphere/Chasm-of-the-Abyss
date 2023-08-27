@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://vkmi4d22w1r0"]
+
+[ext_resource type="PackedScene" uid="uid://xt33h5k03i3m" path="res://prefabs/Player.tscn" id="1_1x3dk"]
+[ext_resource type="PackedScene" uid="uid://om0v7qk24k30" path="res://prefabs/melee weapons/Sword.tscn" id="2_2l41i"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_1x3dk")]
+position = Vector2(363, 229)
+
+[node name="Sword" parent="Player/WeaponMount" index="0" instance=ExtResource("2_2l41i")]
+position = Vector2(82.5322, -8.856)
+rotation = 0.192211
+
+[editable path="Player"]
