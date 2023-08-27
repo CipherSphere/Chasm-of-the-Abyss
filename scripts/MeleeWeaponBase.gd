@@ -15,17 +15,6 @@ func _ready():
 	damage_timer_node = $DamageTimer
 
 func _process(delta):
-	pass
+	self.position.x += 600 * delta
 
-func attack():
-	hitbox_node.monitorable = true
-	self.visible = true
-	sprite_anim_node.play("attack")
-	active = true
-	damage_timer_node.start()
 
-func _on_damage_timer_timeout():
-	hitbox_node.monitorable = false
-	self.visible = false
-	active = false
-	sprite_anim_node.play("idle")

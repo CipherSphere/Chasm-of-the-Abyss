@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://xt33h5k03i3m" path="res://prefabs/Player.tscn" id="1_1x3dk"]
 [ext_resource type="Texture2D" uid="uid://c04og4pdyy8bg" path="res://assets/grassyfield.png" id="1_awj1j"]
+[ext_resource type="PackedScene" uid="uid://om0v7qk24k30" path="res://prefabs/melee weapons/Sword.tscn" id="2_2l41i"]
 [ext_resource type="PackedScene" uid="uid://2302fr25i3ml" path="res://prefabs/enemies/slime.tscn" id="3_2es8n"]
-[ext_resource type="PackedScene" uid="uid://bi5ctq8d6xcsb" path="res://prefabs/melee weapons/spear.tscn" id="3_nmdn8"]
 [ext_resource type="PackedScene" uid="uid://bnpedfreqkiq0" path="res://prefabs/enemies/thief.tscn" id="5_725q3"]
 
 [node name="Main" type="Node2D"]
@@ -16,15 +16,10 @@ texture = ExtResource("1_awj1j")
 [node name="Player" parent="." instance=ExtResource("1_1x3dk")]
 position = Vector2(363, 229)
 max_health = 20
+weapon = ExtResource("2_2l41i")
 
 [node name="WeaponMount" parent="Player" index="4"]
 position = Vector2(-5, 14)
-
-[node name="MeleeWeaponBase" parent="Player/WeaponMount" index="0" instance=ExtResource("3_nmdn8")]
-visible = false
-position = Vector2(164.639, -32.7393)
-rotation = -0.148178
-damage = 3
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 
