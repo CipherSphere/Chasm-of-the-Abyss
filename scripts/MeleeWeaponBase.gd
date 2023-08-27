@@ -18,12 +18,14 @@ func _process(delta):
 	pass
 	
 func attack():
+	self.visible = true
 	$Spriteanim.play("attack")
 	active = true
 	$DamageTimer.start()
 
 
 func _on_damage_timer_timeout():
+	self.visible = false
 	active = false
 	$Spriteanim.play("idle")
 	

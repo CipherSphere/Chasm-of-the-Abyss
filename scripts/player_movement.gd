@@ -4,6 +4,7 @@ extends CharacterBody2D
 const SPEED = 300.0
 
 
+var mouse_pos
 
 func _physics_process(delta):
 	
@@ -25,12 +26,12 @@ func _physics_process(delta):
 	
 func _input(event):
 	
-	var mouse_pos
-	
 	if event is InputEventMouseMotion:
-		print(event.position)
+		mouse_pos = event.position
+		print(mouse_pos)
 	
 	
 	if $WeaponMount.get_child_count() > 0:
 		if event.is_action_pressed("light_attack"):
+			$WeaponMount.look_at(mouse_pos)
 			$WeaponMount.get_children()[0].attack()

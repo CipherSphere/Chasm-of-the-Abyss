@@ -8,8 +8,12 @@
 [node name="Player" parent="." instance=ExtResource("1_1x3dk")]
 position = Vector2(363, 229)
 
+[node name="WeaponMount" parent="Player" index="4"]
+position = Vector2(-5, 14)
+
 [node name="Sword" parent="Player/WeaponMount" index="0" instance=ExtResource("2_2l41i")]
-position = Vector2(82.5322, -8.856)
+visible = false
+position = Vector2(94.8571, -6.01044)
 rotation = 0.192211
 
 [editable path="Player"]
