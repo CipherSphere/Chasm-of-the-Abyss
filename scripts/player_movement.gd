@@ -5,6 +5,9 @@ extends CharacterBody2D
 @export_category("stats")
 @export var max_health: int
 
+@export_category("other")
+@export var weapon: PackedScene
+
 const SPEED = 300.0
 
 
@@ -37,9 +40,5 @@ func _physics_process(delta):
 func _input(event):
 
 	mouse_pos = get_global_mouse_position()
+	$WeaponMountHinge.look_at(mouse_pos)
 		
-	
-	if weapon_mount.get_child_count() > 0:
-		if event.is_action_pressed("light_attack"):
-			weapon_mount.look_at(mouse_pos)
-			weapon_mount.get_children()[0].attack()

@@ -8,12 +8,11 @@ script = ExtResource("1_2il3h")
 [node name="Spriteanim" type="AnimatedSprite2D" parent="."]
 
 [node name="Hitbox" type="Area2D" parent="."]
-monitoring = false
-monitorable = false
 
 [node name="HitboxShape" type="CollisionPolygon2D" parent="Hitbox"]
 
 [node name="DamageTimer" type="Timer" parent="."]
-wait_time = 0.1
+wait_time = 0.3
+autostart = true
 
 [connection signal="timeout" from="DamageTimer" to="." method="_on_damage_timer_timeout"]
