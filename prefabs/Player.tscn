@@ -1,18 +1,18 @@
 [gd_scene load_steps=8 format=3 uid="uid://xt33h5k03i3m"]
 
 [ext_resource type="Script" path="res://scripts/player_movement.gd" id="1_ncf80"]
-[ext_resource type="Texture2D" uid="uid://b48cbt30nma8g" path="res://assets/HeroKnight_BlockNoEffect.png" id="1_w4pdg"]
+[ext_resource type="Texture2D" uid="uid://csfpsuljj40s2" path="res://assets/Sprite-0001-Recovered.png" id="2_12ntf"]
 [ext_resource type="Script" path="res://scripts/PlayerStatComponent.gd" id="3_60nvp"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cepeq"]
-atlas = ExtResource("1_w4pdg")
-region = Rect2(100, 0, 100, 55)
+[sub_resource type="AtlasTexture" id="AtlasTexture_v8hl3"]
+atlas = ExtResource("2_12ntf")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mku4t"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_cepeq")
+"texture": SubResource("AtlasTexture_v8hl3")
 }],
 "loop": true,
 "name": &"default",
@@ -20,27 +20,28 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7qofp"]
-size = Vector2(64, 107)
+size = Vector2(61, 68.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4xvyp"]
-size = Vector2(91, 128)
+size = Vector2(69.5, 76)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_ncf80")
 
 [node name="SpriteAnim" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(3, 3)
+scale = Vector2(4.5, 4.5)
 sprite_frames = SubResource("SpriteFrames_mku4t")
 
 [node name="Collider" type="CollisionShape2D" parent="."]
-position = Vector2(-8, 20.5)
+position = Vector2(0.5, 0.75)
 shape = SubResource("RectangleShape2D_7qofp")
+debug_color = Color(0.623529, 0, 0.164706, 0.419608)
 
 [node name="Hitbox" type="Area2D" parent="."]
 
 [node name="HitBoxShape" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(-5.5, 19)
+position = Vector2(1.25, 1)
 shape = SubResource("RectangleShape2D_4xvyp")
 
 [node name="StatComponent" type="Node2D" parent="."]
