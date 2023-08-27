@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://c04ktjn0kkeof"]
+[gd_scene load_steps=4 format=3 uid="uid://c04ktjn0kkeof"]
 
 [ext_resource type="Script" path="res://scripts/EnemyBaseScene.gd" id="1_uyl0t"]
 [ext_resource type="Script" path="res://scripts/EnemyStatComponent.gd" id="2_h6m0j"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t1kuf"]
+radius = 297.1
 
 [node name="EnemyBaseScene" type="CharacterBody2D"]
 script = ExtResource("1_uyl0t")
@@ -17,4 +20,13 @@ script = ExtResource("1_uyl0t")
 [node name="StatComponent" type="Node2D" parent="."]
 script = ExtResource("2_h6m0j")
 
+[node name="SenseArea" type="Area2D" parent="."]
+visible = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SenseArea"]
+shape = SubResource("CircleShape2D_t1kuf")
+
 [connection signal="area_entered" from="Hitbox" to="StatComponent" method="_on_hitbox_area_entered"]
+[connection signal="area_entered" from="SenseArea" to="." method="_on_sense_area_area_entered"]
+[connection signal="area_exited" from="SenseArea" to="." method="_on_sense_area_area_exited"]

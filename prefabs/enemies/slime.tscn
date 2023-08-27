@@ -27,6 +27,7 @@ size = Vector2(31, 41)
 [node name="Slime" instance=ExtResource("1_m00ng")]
 max_health = 15
 damage = 3
+move_speed = 200.0
 
 [node name="SpriteAnim" parent="." index="0"]
 self_modulate = Color(0, 0.447059, 0.32549, 1)
