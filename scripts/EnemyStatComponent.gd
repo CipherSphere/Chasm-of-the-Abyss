@@ -10,9 +10,11 @@ func _ready():
 	health = parent.max_health
 
 func take_damage(damage):
-	print("Take " + str(damage) + " damage")
+
+	$"../SpriteAnim".self_modulate = Color(10, 1, 1, 1)
+	$RedHitTime.start()
 	health -= damage
-	print("New Hp " + str(health))
+
 	
 	if health <= 0:
 		die()
@@ -27,3 +29,7 @@ func _on_hitbox_area_entered(area):
 
 func die():
 	parent.queue_free()
+
+
+func _on_red_hit_time_timeout():
+	$"../SpriteAnim".self_modulate = Color(1, 1, 1, 1)

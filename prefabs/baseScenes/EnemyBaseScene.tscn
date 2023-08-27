@@ -20,6 +20,9 @@ script = ExtResource("1_uyl0t")
 [node name="StatComponent" type="Node2D" parent="."]
 script = ExtResource("2_h6m0j")
 
+[node name="RedHitTime" type="Timer" parent="StatComponent"]
+wait_time = 0.2
+
 [node name="SenseArea" type="Area2D" parent="."]
 visible = false
 monitorable = false
@@ -28,5 +31,6 @@ monitorable = false
 shape = SubResource("CircleShape2D_t1kuf")
 
 [connection signal="area_entered" from="Hitbox" to="StatComponent" method="_on_hitbox_area_entered"]
+[connection signal="timeout" from="StatComponent/RedHitTime" to="StatComponent" method="_on_red_hit_time_timeout"]
 [connection signal="area_entered" from="SenseArea" to="." method="_on_sense_area_area_entered"]
 [connection signal="area_exited" from="SenseArea" to="." method="_on_sense_area_area_exited"]

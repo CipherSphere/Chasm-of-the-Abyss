@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://vkmi4d22w1r0"]
+[gd_scene load_steps=6 format=3 uid="uid://vkmi4d22w1r0"]
 
 [ext_resource type="PackedScene" uid="uid://xt33h5k03i3m" path="res://prefabs/Player.tscn" id="1_1x3dk"]
 [ext_resource type="Texture2D" uid="uid://c04og4pdyy8bg" path="res://assets/grassyfield.png" id="1_awj1j"]
 [ext_resource type="PackedScene" uid="uid://om0v7qk24k30" path="res://prefabs/melee weapons/Sword.tscn" id="2_2l41i"]
 [ext_resource type="PackedScene" uid="uid://2302fr25i3ml" path="res://prefabs/enemies/slime.tscn" id="3_2es8n"]
+[ext_resource type="PackedScene" uid="uid://bnpedfreqkiq0" path="res://prefabs/enemies/thief.tscn" id="5_725q3"]
 
 [node name="Main" type="Node2D"]
 
@@ -14,7 +15,7 @@ texture = ExtResource("1_awj1j")
 
 [node name="Player" parent="." instance=ExtResource("1_1x3dk")]
 position = Vector2(363, 229)
-max_health = 9
+max_health = 20
 
 [node name="WeaponMount" parent="Player" index="4"]
 position = Vector2(-5, 14)
@@ -31,5 +32,8 @@ position = Vector2(717, 225)
 
 [node name="Slime2" parent="." instance=ExtResource("3_2es8n")]
 position = Vector2(698, 458)
+
+[node name="Thief" parent="." instance=ExtResource("5_725q3")]
+position = Vector2(51, 789)
 
 [editable path="Player"]

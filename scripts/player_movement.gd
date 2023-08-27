@@ -31,11 +31,9 @@ func _physics_process(delta):
 	move_and_slide()
 	
 func _input(event):
-	
-	if event is InputEventMouseMotion:
-		mouse_pos = event.position
+
+	mouse_pos = get_global_mouse_position()
 		
-	
 	
 	if weapon_mount.get_child_count() > 0:
 		if event.is_action_pressed("light_attack"):

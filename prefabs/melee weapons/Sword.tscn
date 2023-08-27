@@ -38,7 +38,7 @@ position = Vector2(2, 13)
 rotation = 0.671863
 scale = Vector2(0.35, 0.35)
 sprite_frames = SubResource("SpriteFrames_mr6v4")
-animation = &"idle"
+animation = &"attack"
 autoplay = "idle"
 
 [node name="HitboxShape" parent="Hitbox" index="0"]

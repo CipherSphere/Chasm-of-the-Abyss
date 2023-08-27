@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://bnpedfreqkiq0"]
+
+[ext_resource type="PackedScene" uid="uid://c04ktjn0kkeof" path="res://prefabs/baseScenes/EnemyBaseScene.tscn" id="1_0x4cw"]
+[ext_resource type="Texture2D" uid="uid://b48cbt30nma8g" path="res://assets/HeroKnight_BlockNoEffect.png" id="2_1yqdp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0sk6d"]
+atlas = ExtResource("2_1yqdp")
+region = Rect2(300, 0, 100, 55)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mcewy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0sk6d")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_87mxk"]
+size = Vector2(47, 68)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uudgf"]
+size = Vector2(67, 83)
+
+[node name="Thief" instance=ExtResource("1_0x4cw")]
+max_health = 25
+damage = 10
+move_speed = 250.0
+
+[node name="SpriteAnim" parent="." index="0"]
+self_modulate = Color(0.231373, 0, 0.231373, 1)
+texture_filter = 1
+scale = Vector2(2.004, 2.004)
+sprite_frames = SubResource("SpriteFrames_mcewy")
+
+[node name="Collider" parent="." index="1"]
+position = Vector2(-5.5, 12)
+shape = SubResource("RectangleShape2D_87mxk")
+
+[node name="HitboxShape" parent="Hitbox" index="0"]
+position = Vector2(-7.5, 12.5)
+shape = SubResource("RectangleShape2D_uudgf")

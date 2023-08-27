@@ -21,7 +21,7 @@ var player = null
 
 
 func _physics_process(delta):
-	print(state)
+	
 	if state == "pursue":
 		
 		direction = (player.position - self.position).normalized()
