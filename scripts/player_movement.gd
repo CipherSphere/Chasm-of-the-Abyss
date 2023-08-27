@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@export var type: String = "player"
 
 const SPEED = 300.0
 
@@ -28,7 +29,7 @@ func _input(event):
 	
 	if event is InputEventMouseMotion:
 		mouse_pos = event.position
-		print(mouse_pos)
+		
 	
 	
 	if $WeaponMount.get_child_count() > 0:

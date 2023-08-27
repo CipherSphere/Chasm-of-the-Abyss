@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://c04ktjn0kkeof"]
+
+[ext_resource type="Script" path="res://scripts/EnemyBaseScene.gd" id="1_uyl0t"]
+[ext_resource type="Script" path="res://scripts/EnemyStatComponent.gd" id="2_h6m0j"]
+
+[node name="EnemyBaseScene" type="CharacterBody2D"]
+script = ExtResource("1_uyl0t")
+
+[node name="SpriteAnim" type="AnimatedSprite2D" parent="."]
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="HitboxShape" type="CollisionShape2D" parent="Hitbox"]
+
+[node name="StatComponent" type="Node2D" parent="."]
+script = ExtResource("2_h6m0j")
+
+[connection signal="area_entered" from="Hitbox" to="StatComponent" method="_on_hitbox_area_entered"]

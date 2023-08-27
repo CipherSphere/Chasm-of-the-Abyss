@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://2302fr25i3ml"]
+
+[ext_resource type="PackedScene" uid="uid://c04ktjn0kkeof" path="res://prefabs/baseScenes/EnemyBaseScene.tscn" id="1_m00ng"]
+[ext_resource type="Texture2D" uid="uid://b48cbt30nma8g" path="res://assets/HeroKnight_BlockNoEffect.png" id="2_3mlqb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_58agp"]
+atlas = ExtResource("2_3mlqb")
+region = Rect2(200, 0, 100, 55)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_34k5t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_58agp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_govdj"]
+size = Vector2(24, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m83qu"]
+size = Vector2(31, 41)
+
+[node name="Slime" instance=ExtResource("1_m00ng")]
+max_health = 15
+damage = 3
+
+[node name="SpriteAnim" parent="." index="0"]
+self_modulate = Color(0, 0.447059, 0.32549, 1)
+sprite_frames = SubResource("SpriteFrames_34k5t")
+
+[node name="Collider" parent="." index="1"]
+position = Vector2(-2, 6)
+shape = SubResource("RectangleShape2D_govdj")
+
+[node name="HitboxShape" parent="Hitbox" index="0"]
+position = Vector2(-1.5, 5.5)
+shape = SubResource("RectangleShape2D_m83qu")

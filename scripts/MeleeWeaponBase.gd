@@ -9,15 +9,11 @@ extends Node2D
 
 
 
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
 	
 func attack():
+	$Hitbox.monitorable = true
 	self.visible = true
 	$Spriteanim.play("attack")
 	active = true
@@ -25,6 +21,7 @@ func attack():
 
 
 func _on_damage_timer_timeout():
+	$Hitbox.monitorable = false
 	self.visible = false
 	active = false
 	$Spriteanim.play("idle")
