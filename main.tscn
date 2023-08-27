@@ -36,4 +36,16 @@ position = Vector2(698, 458)
 [node name="Thief" parent="." instance=ExtResource("5_725q3")]
 position = Vector2(51, 789)
 
+[node name="Slime3" parent="." instance=ExtResource("3_2es8n")]
+position = Vector2(959, 370)
+
+[node name="Slime4" parent="." instance=ExtResource("3_2es8n")]
+position = Vector2(927, 42)
+
+[node name="Thief2" parent="." instance=ExtResource("5_725q3")]
+position = Vector2(396, 830)
+
+[node name="Thief3" parent="." instance=ExtResource("5_725q3")]
+position = Vector2(-356, 597)
+
 [editable path="Player"]

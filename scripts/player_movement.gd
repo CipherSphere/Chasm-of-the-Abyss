@@ -27,7 +27,11 @@ func _physics_process(delta):
 		velocity.y = direction_verti * SPEED
 	else:
 		velocity.y = move_toward(velocity.y, 0, SPEED)
-
+		
+	if velocity != Vector2(0, 0):
+		$SpriteAnim.animation = "walk"
+	else:
+		$SpriteAnim.animation = "idle"
 	move_and_slide()
 	
 func _input(event):

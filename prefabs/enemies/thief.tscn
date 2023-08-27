@@ -1,28 +1,49 @@
-[gd_scene load_steps=7 format=3 uid="uid://bnpedfreqkiq0"]
+[gd_scene load_steps=10 format=3 uid="uid://bnpedfreqkiq0"]
 
 [ext_resource type="PackedScene" uid="uid://c04ktjn0kkeof" path="res://prefabs/baseScenes/EnemyBaseScene.tscn" id="1_0x4cw"]
-[ext_resource type="Texture2D" uid="uid://b48cbt30nma8g" path="res://assets/HeroKnight_BlockNoEffect.png" id="2_1yqdp"]
+[ext_resource type="Texture2D" uid="uid://dxai3ffocckx6" path="res://assets/Thief-Walk-Sheet-export.png" id="2_h38rj"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0sk6d"]
-atlas = ExtResource("2_1yqdp")
-region = Rect2(300, 0, 100, 55)
+[sub_resource type="AtlasTexture" id="AtlasTexture_bsk4j"]
+atlas = ExtResource("2_h38rj")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2wu6c"]
+atlas = ExtResource("2_h38rj")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p6i3s"]
+atlas = ExtResource("2_h38rj")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hh3bc"]
+atlas = ExtResource("2_h38rj")
+region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mcewy"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0sk6d")
+"texture": SubResource("AtlasTexture_bsk4j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2wu6c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p6i3s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hh3bc")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 7.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_87mxk"]
-size = Vector2(47, 68)
+size = Vector2(51, 49)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uudgf"]
-size = Vector2(67, 83)
+size = Vector2(63, 59)
 
 [node name="Thief" instance=ExtResource("1_0x4cw")]
 max_health = 25
@@ -30,15 +51,16 @@ damage = 10
 move_speed = 250.0
 
 [node name="SpriteAnim" parent="." index="0"]
-self_modulate = Color(0.231373, 0, 0.231373, 1)
 texture_filter = 1
-scale = Vector2(2.004, 2.004)
+scale = Vector2(3.5, 3.5)
 sprite_frames = SubResource("SpriteFrames_mcewy")
+autoplay = "default"
 
 [node name="Collider" parent="." index="1"]
-position = Vector2(-5.5, 12)
+position = Vector2(3.5, 5.5)
 shape = SubResource("RectangleShape2D_87mxk")
 
 [node name="HitboxShape" parent="Hitbox" index="0"]
-position = Vector2(-7.5, 12.5)
+position = Vector2(1.5, 4.5)
 shape = SubResource("RectangleShape2D_uudgf")
+debug_color = Color(0.964706, 0, 0.490196, 0.419608)
