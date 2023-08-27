@@ -8,6 +8,7 @@
 
 [node name="Player" parent="." instance=ExtResource("1_1x3dk")]
 position = Vector2(363, 229)
+max_health = 9
 
 [node name="WeaponMount" parent="Player" index="4"]
 position = Vector2(-5, 14)

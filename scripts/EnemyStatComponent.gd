@@ -3,8 +3,11 @@ extends Node2D
 var health
 
 # Called when the node enters the scene tree for the first time.
+
+@onready var parent = $".."
+
 func _ready():
-	health = $"..".max_health
+	health = parent.max_health
 
 func take_damage(damage):
 	print("Take " + str(damage) + " damage")
@@ -23,4 +26,4 @@ func _on_hitbox_area_entered(area):
 
 
 func die():
-	$"..".queue_free()
+	parent.queue_free()

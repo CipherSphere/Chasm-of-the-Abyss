@@ -2,10 +2,15 @@ extends CharacterBody2D
 
 @export var type: String = "player"
 
+@export_category("stats")
+@export var max_health: int
+
 const SPEED = 300.0
 
 
 var mouse_pos
+
+@onready var weapon_mount = $WeaponMount
 
 func _physics_process(delta):
 	
@@ -32,7 +37,7 @@ func _input(event):
 		
 	
 	
-	if $WeaponMount.get_child_count() > 0:
+	if weapon_mount.get_child_count() > 0:
 		if event.is_action_pressed("light_attack"):
-			$WeaponMount.look_at(mouse_pos)
-			$WeaponMount.get_children()[0].attack()
+			weapon_mount.look_at(mouse_pos)
+			weapon_mount.get_children()[0].attack()
