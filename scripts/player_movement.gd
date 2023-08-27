@@ -5,6 +5,9 @@ extends CharacterBody2D
 @export_category("stats")
 @export var max_health: int
 
+@export_category("other")
+@export var weapon: PackedScene
+
 const SPEED = 300.0
 
 

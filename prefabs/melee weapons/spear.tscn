@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://bi5ctq8d6xcsb"]
+
+[ext_resource type="PackedScene" uid="uid://ihetcn00o6ru" path="res://prefabs/baseScenes/MeleeWeaponBase.tscn" id="1_nwqqx"]
+[ext_resource type="Texture2D" uid="uid://dbvgpy4i10xh2" path="res://assets/spear-stab.png" id="2_1lc67"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eg560"]
+atlas = ExtResource("2_1lc67")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_msy1i"]
+atlas = ExtResource("2_1lc67")
+region = Rect2(24, 24, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uy0vk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eg560")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_msy1i")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="MeleeWeaponBase" instance=ExtResource("1_nwqqx")]
+
+[node name="Spriteanim" parent="." index="0"]
+texture_filter = 1
+scale = Vector2(7.844, 4.227)
+sprite_frames = SubResource("SpriteFrames_uy0vk")
+animation = &"attack"
+autoplay = "idle"
+
+[node name="HitboxShape" parent="Hitbox" index="0"]
+position = Vector2(-0.999996, -1)
+scale = Vector2(6.7, 1.1)
+polygon = PackedVector2Array(12.5373, -7.27273, 5.67164, -20, -15.8209, -2.38419e-07, 6.1194, 24.5455, 12.8358, 10.9091, 16.5672, 1.81818)
