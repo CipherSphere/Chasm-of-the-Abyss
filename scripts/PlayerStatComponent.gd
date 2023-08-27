@@ -4,7 +4,7 @@ var health
 var max_health_node
 var hitbox_node
 var i_frame_timer
-
+var visual
 
 func _ready():
 	max_health_node = $".."
@@ -12,12 +12,18 @@ func _ready():
 	
 	hitbox_node = $"../Hitbox"
 	i_frame_timer = $"IFrameTimer"
+	visual = $"../SpriteAnim"
 
 func take_damage(damage):
+	visual.self_modulate = Color(1, 1, 1, 0.5)
+	
 	i_frame_timer.start()
 	health -= damage
-	hitbox_node.monitorable = false
-	hitbox_node.monitoring = false
+	
+	hitbox_node.set_deferred("monitorable", false)
+	hitbox_node.set_deferred("monitoring", false)
+	
+	
 	if health <= 0:
 		die()
 
@@ -29,5 +35,6 @@ func die():
 	max_health_node.queue_free()
 
 func _on_i_frame_timer_timeout():
-	hitbox_node.monitorable = true
-	hitbox_node.monitoring = true
+	hitbox_node.set_deferred("monitorable", true)
+	hitbox_node.set_deferred("monitoring", true)
+	visual.self_modulate = Color(1, 1, 1, 1)
