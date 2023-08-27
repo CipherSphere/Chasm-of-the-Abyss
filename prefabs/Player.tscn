@@ -81,8 +81,9 @@ script = ExtResource("3_60nvp")
 
 [node name="IFrameTimer" type="Timer" parent="StatComponent"]
 
-[node name="WeaponMount" type="Node2D" parent="."]
-position = Vector2(-10, 17)
+[node name="WeaponMountHinge" type="Node2D" parent="."]
+
+[node name="WeaponMount" type="Node2D" parent="WeaponMountHinge"]
 rotation = 0.094847
 script = ExtResource("4_qkirm")
 

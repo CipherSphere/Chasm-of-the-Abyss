@@ -40,4 +40,5 @@ func _physics_process(delta):
 func _input(event):
 
 	mouse_pos = get_global_mouse_position()
+	$WeaponMountHinge.look_at(mouse_pos)
 		

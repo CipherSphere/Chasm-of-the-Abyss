@@ -4,17 +4,22 @@ extends Node2D
 @export var damage: int  
 @export var active: bool = false
 
-var hitbox_node
-var sprite_anim_node
-var damage_timer_node
+var velocity: Vector2
 
-# Called when the node enters the scene tree for the first time.
+var direction
+
 func _ready():
-	hitbox_node = $Hitbox
-	sprite_anim_node = $Spriteanim
-	damage_timer_node = $DamageTimer
+	direction = (get_global_mouse_position() - self.position).normalized()
+	
 
 func _process(delta):
-	self.position.x += 600 * delta
+
+	velocity = direction * 600
+	
+	self.position += velocity * delta
 
 
+
+
+func _on_damage_timer_timeout():
+	queue_free()

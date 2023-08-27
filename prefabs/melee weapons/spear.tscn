@@ -30,16 +30,20 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="MeleeWeaponBase" instance=ExtResource("1_nwqqx")]
+[node name="Spear" instance=ExtResource("1_nwqqx")]
+damage = 3
 
 [node name="Spriteanim" parent="." index="0"]
 texture_filter = 1
-scale = Vector2(7.844, 4.227)
+scale = Vector2(6.914, 2.146)
 sprite_frames = SubResource("SpriteFrames_uy0vk")
 animation = &"attack"
-autoplay = "idle"
+autoplay = "attack"
 
 [node name="HitboxShape" parent="Hitbox" index="0"]
 position = Vector2(-0.999996, -1)
 scale = Vector2(6.7, 1.1)
 polygon = PackedVector2Array(12.5373, -7.27273, 5.67164, -20, -15.8209, -2.38419e-07, 6.1194, 24.5455, 12.8358, 10.9091, 16.5672, 1.81818)
+
+[node name="DamageTimer" parent="." index="2"]
+wait_time = 0.4

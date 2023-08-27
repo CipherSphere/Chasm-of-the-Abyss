@@ -4,7 +4,7 @@ var parent
 var weapon
 
 func _ready():
-	parent = $".."
+	parent = $"../.."
 	if parent.weapon != null:
 		weapon = parent.weapon
 	
@@ -17,10 +17,10 @@ func _input(event):
 
 func attack():
 	var new_attack = weapon.instantiate()
-	new_attack.position = self.global_position
+	new_attack.position = $"..".global_position
 	new_attack.rotation = self.global_rotation
 	
-	self.get_parent().get_parent().add_child(new_attack)
+	self.get_parent().get_parent().get_parent().add_child(new_attack)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
