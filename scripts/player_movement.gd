@@ -18,11 +18,7 @@ var mouse_pos
 @onready var weapon_mount = $WeaponMountHinge/WeaponMount
 
 
-signal add_xp(amount)
 
-
-func _ready():
-	$ProgressBar.max_value = max_health
 
 func _physics_process(delta):
 	
@@ -52,5 +48,3 @@ func _input(event):
 	$WeaponMountHinge.look_at(mouse_pos)
 	
 	
-func add_xp_func(amount):
-	emit_signal("add_xp", amount)

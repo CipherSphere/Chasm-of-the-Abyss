@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://cjvjsxlrsj6tx"]
+
+[ext_resource type="PackedScene" uid="uid://xt33h5k03i3m" path="res://prefabs/baseScenes/Player.tscn" id="1_h53w5"]
+[ext_resource type="PackedScene" uid="uid://bi5ctq8d6xcsb" path="res://prefabs/melee weapons/spear.tscn" id="2_hu5x6"]
+[ext_resource type="Texture2D" uid="uid://wmlt38lfxfjh" path="res://assets/ranger-walk-Sheet-export.png" id="3_vh3j0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lvicn"]
+atlas = ExtResource("3_vh3j0")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b8elx"]
+atlas = ExtResource("3_vh3j0")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gc7bt"]
+atlas = ExtResource("3_vh3j0")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xtuo6"]
+atlas = ExtResource("3_vh3j0")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kb2nn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lvicn")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lvicn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b8elx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gc7bt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xtuo6")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="Ranger" instance=ExtResource("1_h53w5")]
+max_health = 15
+weapon = ExtResource("2_hu5x6")
+
+[node name="SpriteAnim" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_kb2nn")
