@@ -2,9 +2,9 @@ extends Node2D
 
 var health
 
-# Called when the node enters the scene tree for the first time.
-
 @onready var parent = $".."
+@onready var player = get_node("/root/Main/Player")
+
 
 func _ready():
 	health = parent.max_health
@@ -27,9 +27,11 @@ func _on_hitbox_area_entered(area):
 		take_damage(area.get_parent().damage)
 
 
-func die():
-	parent.queue_free()
 
+func die():
+	player.add_xp_func($"..".xp_granted)
+	parent.queue_free()
+	
 
 func _on_red_hit_time_timeout():
 	$"../SpriteAnim".self_modulate = Color(1, 1, 1, 1)

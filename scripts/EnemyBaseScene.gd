@@ -7,6 +7,7 @@ extends CharacterBody2D
 @export var max_health: int
 @export var damage: int
 @export var move_speed: float
+@export var xp_granted: int
 
 
 
