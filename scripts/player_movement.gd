@@ -13,7 +13,7 @@ const SPEED = 300.0
 
 var mouse_pos
 
-@onready var weapon_mount = $WeaponMount
+@onready var weapon_mount = $WeaponMountHinge/WeaponMount
 
 func _physics_process(delta):
 	

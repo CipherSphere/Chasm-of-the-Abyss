@@ -87,5 +87,9 @@ script = ExtResource("3_60nvp")
 rotation = 0.094847
 script = ExtResource("4_qkirm")
 
+[node name="AttackCooldown" type="Timer" parent="WeaponMountHinge"]
+one_shot = true
+
 [connection signal="area_entered" from="Hitbox" to="StatComponent" method="_on_hitbox_area_entered"]
 [connection signal="timeout" from="StatComponent/IFrameTimer" to="StatComponent" method="_on_i_frame_timer_timeout"]
+[connection signal="timeout" from="WeaponMountHinge/AttackCooldown" to="WeaponMountHinge/WeaponMount" method="_on_attack_cooldown_timeout"]

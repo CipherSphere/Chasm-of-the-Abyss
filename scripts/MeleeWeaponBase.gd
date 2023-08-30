@@ -2,6 +2,7 @@ extends Node2D
 
 @export var type: String = "weapon"
 @export var damage: int  
+@export var cool_down: float  
 @export var active: bool = false
 
 var velocity: Vector2
