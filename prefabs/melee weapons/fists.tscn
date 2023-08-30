@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://btseqh6ubbm6x"]
+
+[ext_resource type="PackedScene" uid="uid://ihetcn00o6ru" path="res://prefabs/baseScenes/MeleeWeaponBase.tscn" id="1_igald"]
+[ext_resource type="Texture2D" uid="uid://b48cbt30nma8g" path="res://assets/HeroKnight_BlockNoEffect.png" id="2_151vr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ddmfe"]
+atlas = ExtResource("2_151vr")
+region = Rect2(375, 0, 125, 13)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lsnwg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ddmfe")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="fists" instance=ExtResource("1_igald")]
+damage = 1
+cool_down = 0.1
+
+[node name="Spriteanim" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_lsnwg")
+
+[node name="HitboxShape" parent="Hitbox" index="0"]
+position = Vector2(0.999999, 0)
+scale = Vector2(0.242565, 0.580357)
+polygon = PackedVector2Array(10, -10, 18, -3, 16, 8, 2, 17, -21, 9, -17, -13, 1, -18)
+
+[node name="DamageTimer" parent="." index="2"]
+wait_time = 0.2

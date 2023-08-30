@@ -29,9 +29,9 @@ func _on_hitbox_area_entered(area):
 
 
 func die():
-	
-	parent.queue_free()
 	player.add_xp_func($"..".xp_granted)
+	parent.queue_free()
+	
 
 func _on_red_hit_time_timeout():
 	$"../SpriteAnim".self_modulate = Color(1, 1, 1, 1)
