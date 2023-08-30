@@ -4,6 +4,8 @@ extends CharacterBody2D
 
 @export_category("stats")
 @export var max_health: int
+@export var level: int = 1
+@export var xp: int = 0
 
 @export_category("other")
 @export var weapon: PackedScene
@@ -14,6 +16,9 @@ const SPEED = 300.0
 var mouse_pos
 
 @onready var weapon_mount = $WeaponMountHinge/WeaponMount
+
+func _ready():
+	$ProgressBar.max_value = max_health
 
 func _physics_process(delta):
 	

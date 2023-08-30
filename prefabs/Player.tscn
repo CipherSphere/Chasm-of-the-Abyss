@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://xt33h5k03i3m"]
+[gd_scene load_steps=14 format=3 uid="uid://xt33h5k03i3m"]
 
 [ext_resource type="Script" path="res://scripts/player_movement.gd" id="1_ncf80"]
 [ext_resource type="Texture2D" uid="uid://41pt2tghkpxe" path="res://assets/Basic-Knight-Walk-Sheet-export.png" id="2_tcmvu"]
@@ -55,6 +55,12 @@ size = Vector2(61, 68.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4xvyp"]
 size = Vector2(69.5, 76)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iqi2v"]
+bg_color = Color(0.392157, 0.4, 0.384314, 0.764706)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t6suq"]
+bg_color = Color(1, 0, 0, 1)
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_ncf80")
 
@@ -89,6 +95,16 @@ script = ExtResource("4_qkirm")
 
 [node name="AttackCooldown" type="Timer" parent="WeaponMountHinge"]
 one_shot = true
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -71.0
+offset_top = -89.0
+offset_right = 71.0
+offset_bottom = -62.0
+theme_override_styles/background = SubResource("StyleBoxFlat_iqi2v")
+theme_override_styles/fill = SubResource("StyleBoxFlat_t6suq")
+value = 100.0
+show_percentage = false
 
 [connection signal="area_entered" from="Hitbox" to="StatComponent" method="_on_hitbox_area_entered"]
 [connection signal="timeout" from="StatComponent/IFrameTimer" to="StatComponent" method="_on_i_frame_timer_timeout"]

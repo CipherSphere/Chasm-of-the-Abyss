@@ -19,6 +19,7 @@ func take_damage(damage):
 	
 	i_frame_timer.start()
 	health -= damage
+	$"../ProgressBar".value = health
 	
 	hitbox_node.set_deferred("monitorable", false)
 	hitbox_node.set_deferred("monitoring", false)

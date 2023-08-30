@@ -20,25 +20,27 @@ weapon = ExtResource("3_bjtu3")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 
-[node name="Slime" parent="." instance=ExtResource("3_2es8n")]
+[node name="enemies" type="Node2D" parent="."]
+
+[node name="Slime" parent="enemies" instance=ExtResource("3_2es8n")]
 position = Vector2(717, 225)
 
-[node name="Slime2" parent="." instance=ExtResource("3_2es8n")]
+[node name="Slime2" parent="enemies" instance=ExtResource("3_2es8n")]
 position = Vector2(698, 458)
 
-[node name="Thief" parent="." instance=ExtResource("5_725q3")]
+[node name="Thief" parent="enemies" instance=ExtResource("5_725q3")]
 position = Vector2(51, 789)
 
-[node name="Slime3" parent="." instance=ExtResource("3_2es8n")]
+[node name="Slime3" parent="enemies" instance=ExtResource("3_2es8n")]
 position = Vector2(959, 370)
 
-[node name="Slime4" parent="." instance=ExtResource("3_2es8n")]
+[node name="Slime4" parent="enemies" instance=ExtResource("3_2es8n")]
 position = Vector2(927, 42)
 
-[node name="Thief2" parent="." instance=ExtResource("5_725q3")]
+[node name="Thief2" parent="enemies" instance=ExtResource("5_725q3")]
 position = Vector2(396, 830)
 
-[node name="Thief3" parent="." instance=ExtResource("5_725q3")]
+[node name="Thief3" parent="enemies" instance=ExtResource("5_725q3")]
 position = Vector2(-356, 597)
 
 [editable path="Player"]

@@ -49,6 +49,7 @@ size = Vector2(63, 59)
 max_health = 25
 damage = 10
 move_speed = 250.0
+xp_granted = 8
 
 [node name="SpriteAnim" parent="." index="0"]
 texture_filter = 1

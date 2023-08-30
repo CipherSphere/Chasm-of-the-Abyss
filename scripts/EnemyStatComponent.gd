@@ -2,8 +2,6 @@ extends Node2D
 
 var health
 
-# Called when the node enters the scene tree for the first time.
-
 @onready var parent = $".."
 
 func _ready():
@@ -27,7 +25,9 @@ func _on_hitbox_area_entered(area):
 		take_damage(area.get_parent().damage)
 
 
+
 func die():
+	
 	parent.queue_free()
 
 
