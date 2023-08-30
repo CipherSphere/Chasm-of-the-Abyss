@@ -19,13 +19,15 @@ func take_damage(damage):
 	
 	i_frame_timer.start()
 	health -= damage
-	$"../ProgressBar".value = health
+	print(health)
+	
 	
 	hitbox_node.set_deferred("monitorable", false)
 	hitbox_node.set_deferred("monitoring", false)
 	
 	
 	if health <= 0:
+		print("die")
 		die()
 
 
@@ -43,7 +45,3 @@ func _on_i_frame_timer_timeout():
 	visual.self_modulate = Color(1, 1, 1, 1)
 
 
-func _on_player_add_xp(amount):
-	
-	$"..".xp += amount
-	$"../XPbar".value = $"..".xp

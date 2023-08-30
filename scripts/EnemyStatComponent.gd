@@ -29,7 +29,7 @@ func _on_hitbox_area_entered(area):
 
 
 func die():
-	player.add_xp_func($"..".xp_granted)
+	
 	parent.queue_free()
 	
 
