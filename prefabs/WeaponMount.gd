@@ -5,6 +5,9 @@ var weapon
 
 var can_attack = true
 
+
+@onready var cool_down_timer = $"../AttackCooldown"
+
 func _ready():
 	parent = $"../.."
 	if parent.weapon != null:
@@ -21,9 +24,9 @@ func attack():
 	if can_attack:
 		
 		var new_attack = weapon.instantiate()
-		$"../AttackCooldown".wait_time = new_attack.cool_down
+		cool_down_timer.wait_time = new_attack.cool_down
 		can_attack = false
-		$"../AttackCooldown".start()
+		cool_down_timer.start()
 		new_attack.position = $"..".global_position
 		new_attack.rotation = self.global_rotation
 		
@@ -35,4 +38,4 @@ func _on_attack_cooldown_timeout():
 	print("cooldown off")
 	
 	can_attack = true
-	$"../AttackCooldown".stop()
+	cool_down_timer.stop()
