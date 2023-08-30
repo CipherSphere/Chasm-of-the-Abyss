@@ -14,7 +14,7 @@ scale = Vector2(2.755, 2.755)
 texture = ExtResource("1_awj1j")
 
 [node name="Player" parent="." instance=ExtResource("1_1x3dk")]
-position = Vector2(208, 123)
+position = Vector2(208, 124)
 max_health = 20
 weapon = ExtResource("3_bjtu3")
 
@@ -42,5 +42,7 @@ position = Vector2(396, 830)
 
 [node name="Thief3" parent="enemies" instance=ExtResource("5_725q3")]
 position = Vector2(-356, 597)
+
+[connection signal="add_xp" from="Player" to="Player/StatComponent" method="_on_player_add_xp"]
 
 [editable path="Player"]

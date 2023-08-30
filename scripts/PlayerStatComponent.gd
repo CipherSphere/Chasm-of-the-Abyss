@@ -28,6 +28,8 @@ func take_damage(damage):
 	if health <= 0:
 		die()
 
+
+
 func _on_hitbox_area_entered(area):
 	if area.get_parent().type == "enemy":
 		take_damage(area.get_parent().damage)
@@ -39,3 +41,9 @@ func _on_i_frame_timer_timeout():
 	hitbox_node.set_deferred("monitorable", true)
 	hitbox_node.set_deferred("monitoring", true)
 	visual.self_modulate = Color(1, 1, 1, 1)
+
+
+func _on_player_add_xp(amount):
+	
+	$"..".xp += amount
+	$"../XPbar".value = $"..".xp
