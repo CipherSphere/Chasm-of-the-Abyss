@@ -54,3 +54,4 @@ weapon = ExtResource("2_hu5x6")
 
 [node name="SpriteAnim" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_kb2nn")
+animation = &"idle"

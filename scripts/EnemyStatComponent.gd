@@ -3,7 +3,7 @@ extends Node2D
 var health
 
 @onready var parent = $".."
-@onready var player = get_node("/root/Main/Player")
+
 
 
 func _ready():

@@ -52,4 +52,4 @@ max_health = 20
 
 [node name="SpriteAnim" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_6ylng")
-animation = &"idle"
+animation = &"walk"

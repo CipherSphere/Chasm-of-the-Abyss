@@ -1,0 +1,63 @@
+[gd_scene load_steps=10 format=3 uid="uid://cutkthvek0tab"]
+
+[ext_resource type="PackedScene" uid="uid://doxbsa1jyx42p" path="res://prefabs/baseScenes/Player.tscn" id="1_wpmfm"]
+[ext_resource type="PackedScene" uid="uid://k4eu5c6r7lbl" path="res://prefabs/melee weapons/fireball.tscn" id="2_4rr82"]
+[ext_resource type="Texture2D" uid="uid://deh8scccfy153" path="res://assets/wizard-walk-Sheet-export.png" id="2_yt0ji"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjs5f"]
+atlas = ExtResource("2_yt0ji")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_64oid"]
+atlas = ExtResource("2_yt0ji")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cm4un"]
+atlas = ExtResource("2_yt0ji")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0sq3t"]
+atlas = ExtResource("2_yt0ji")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pbiiw"]
+atlas = ExtResource("2_yt0ji")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ndsjt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bjs5f")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bjs5f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_64oid")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cm4un")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0sq3t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pbiiw")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="Player" instance=ExtResource("1_wpmfm")]
+weapon = ExtResource("2_4rr82")
+
+[node name="SpriteAnim" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_ndsjt")
+animation = &"idle"
