@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bo4gm86tnumhw"
+path="res://.godot/imported/Layers piccolo.mp3-1a87d3f880a6ade64b08bb0aa35e300a.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Layers piccolo.mp3"
+dest_files=["res://.godot/imported/Layers piccolo.mp3-1a87d3f880a6ade64b08bb0aa35e300a.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=85.91
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b33dcucucc3jm"
+path="res://.godot/imported/Layers plucked.mp3-33155795f89d78d4f03fd7ca53b78164.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Layers plucked.mp3"
+dest_files=["res://.godot/imported/Layers plucked.mp3-33155795f89d78d4f03fd7ca53b78164.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=85.91
+beat_count=0
+bar_beats=4
