@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://vkmi4d22w1r0"]
+[gd_scene load_steps=6 format=3 uid="uid://vkmi4d22w1r0"]
 
 [ext_resource type="Texture2D" uid="uid://c04og4pdyy8bg" path="res://assets/grassyfield.png" id="1_awj1j"]
 [ext_resource type="PackedScene" uid="uid://2302fr25i3ml" path="res://prefabs/enemies/slime.tscn" id="3_2es8n"]
 [ext_resource type="PackedScene" uid="uid://cutkthvek0tab" path="res://prefabs/classes/wizard.tscn" id="4_fbueb"]
+[ext_resource type="Script" path="res://MusicNode.gd" id="5_2qoo2"]
 [ext_resource type="PackedScene" uid="uid://bnpedfreqkiq0" path="res://prefabs/enemies/thief.tscn" id="5_725q3"]
 
 [node name="Main" type="Node2D"]
@@ -37,3 +38,6 @@ position = Vector2(-356, 597)
 
 [node name="Player" parent="." instance=ExtResource("4_fbueb")]
 position = Vector2(140, 292)
+
+[node name="MusicNode" type="Node" parent="."]
+script = ExtResource("5_2qoo2")

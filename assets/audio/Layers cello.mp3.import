@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bcl0wfhlrxlqv"
+path="res://.godot/imported/Layers cello.mp3-7d46b5aa8d7dd6d9e339005b29192bb9.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Layers cello.mp3"
+dest_files=["res://.godot/imported/Layers cello.mp3-7d46b5aa8d7dd6d9e339005b29192bb9.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=85.91
+beat_count=0
+bar_beats=4

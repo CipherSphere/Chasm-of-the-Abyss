@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b5mjlx21edg81"
+path="res://.godot/imported/Layers pizzicato.mp3-4c505fa597bf04f6cd57f4f826908734.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Layers pizzicato.mp3"
+dest_files=["res://.godot/imported/Layers pizzicato.mp3-4c505fa597bf04f6cd57f4f826908734.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=85.91
+beat_count=0
+bar_beats=4
