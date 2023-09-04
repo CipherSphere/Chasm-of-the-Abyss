@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dpyybwt7eal1u"]
 
-[ext_resource type="PackedScene" uid="uid://xt33h5k03i3m" path="res://prefabs/baseScenes/Player.tscn" id="1_s3x4d"]
+[ext_resource type="PackedScene" uid="uid://doxbsa1jyx42p" path="res://prefabs/baseScenes/Player.tscn" id="1_s3x4d"]
 [ext_resource type="Texture2D" uid="uid://41pt2tghkpxe" path="res://assets/Basic-Knight-Walk-Sheet-export.png" id="2_vogtl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vh2hv"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://cjvjsxlrsj6tx"]
 
-[ext_resource type="PackedScene" uid="uid://xt33h5k03i3m" path="res://prefabs/baseScenes/Player.tscn" id="1_h53w5"]
+[ext_resource type="PackedScene" uid="uid://doxbsa1jyx42p" path="res://prefabs/baseScenes/Player.tscn" id="1_h53w5"]
 [ext_resource type="PackedScene" uid="uid://bi5ctq8d6xcsb" path="res://prefabs/melee weapons/spear.tscn" id="2_hu5x6"]
 [ext_resource type="Texture2D" uid="uid://wmlt38lfxfjh" path="res://assets/ranger-walk-Sheet-export.png" id="3_vh3j0"]
 

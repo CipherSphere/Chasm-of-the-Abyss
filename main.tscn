@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://vkmi4d22w1r0"]
+[gd_scene load_steps=8 format=3 uid="uid://vkmi4d22w1r0"]
 
 [ext_resource type="Texture2D" uid="uid://ddd8ep2visuyb" path="res://assets/Grassy-Field-Sheet.png" id="1_jv3nr"]
 [ext_resource type="PackedScene" uid="uid://2302fr25i3ml" path="res://prefabs/enemies/slime.tscn" id="3_2es8n"]
 [ext_resource type="PackedScene" uid="uid://cutkthvek0tab" path="res://prefabs/classes/wizard.tscn" id="4_fbueb"]
 [ext_resource type="PackedScene" uid="uid://bnpedfreqkiq0" path="res://prefabs/enemies/thief.tscn" id="5_725q3"]
+[ext_resource type="PackedScene" uid="uid://bigsif5ogf4ex" path="res://prefabs/EntitySpawner.tscn" id="5_876ur"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dllbc"]
 texture = ExtResource("1_jv3nr")
@@ -50,3 +51,8 @@ position = Vector2(-356, 597)
 
 [node name="Player" parent="." instance=ExtResource("4_fbueb")]
 position = Vector2(140, 292)
+
+[node name="EntitySpawner" parent="." instance=ExtResource("5_876ur")]
+position = Vector2(-74, 298)
+entity = ExtResource("3_2es8n")
+spawn_rate = 1.0
